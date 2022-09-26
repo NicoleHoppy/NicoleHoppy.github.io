@@ -93,10 +93,12 @@ body {
 
 .tile5 {
   margin: 10px;
-  width: 480px;
-  height: 304px;
+  width: 420px;
+  height: 244px;
   background-color: #666666;
   text-align: center;
+  text-align: justify;
+  padding: 30px;
 }
 
 .yt {
@@ -149,4 +151,9 @@ body {
 
 .linkedin:hover {
   background-color: #0d6597;
+}
+
+a.tilelinkhtml5 {
+  color: #ffffff;
+  text-decoration: none;
 }
