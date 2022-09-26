@@ -28,6 +28,35 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/fontello.css" type="text/css" />
+
+    <script>
+      const show = (element) => {
+        document.getElementById("loremipsum1").classList.remove("hide");
+        document.getElementById("loremipsum1").classList.add("hide");
+        document.getElementById("loremipsum2").classList.add("hide");
+        document.getElementById("loremipsum3").classList.add("hide");
+        document.getElementById("loremipsum4").classList.add("hide");
+        document.getElementById(element).classList.remove("hide");
+      };
+
+      const odliczanie = () => {
+        let dzisiaj = new Date();
+
+        let godzina = dzisiaj.getHours();
+        if (godzina < 10) godzina = "0" + godzina;
+
+        let minuta = dzisiaj.getMinutes();
+        if (minuta < 10) minuta = "0" + minuta;
+
+        let sekunda = dzisiaj.getSeconds();
+        if (sekunda < 10) sekunda = "0" + sekunda;
+
+        document.getElementById("clock").innerHTML =
+          godzina + ":" + minuta + ":" + sekunda;
+
+        setTimeout("odliczanie()", 1000);
+      };
+    </script>
   </head>
   <body>
     <div id="container">
@@ -35,36 +64,28 @@
         <div id="logo">
           <a href="index.html" class="tilelinkhtml5">Lorem ipsum</a>
         </div>
-        <div id="clock">12:00</div>
+        <div id="clock" onload="odliczanie()">12:00</div>
         <div style="clear: both"></div>
       </div>
 
       <div class="square">
-        <a href="loremipsum1.html" class="tilelinkhtml5">
-          <div class="tile1">
-            <i class="icon-user"></i><br />
-            Lorem ipsum?
-          </div>
-        </a>
-        <a href="loremipsum2.html" class="tilelinkhtml5">
-          <div class="tile1">
-            <i class="icon-laptop"></i><br />
-            Lorem ipsum?
-          </div>
-        </a>
+        <div class="tile1" onclick="show('loremipsum1')">
+          <i class="icon-user"></i><br />
+          Lorem ipsum?
+        </div>
+        <div class="tile1" onclick="show('loremipsum2')">
+          <i class="icon-laptop"></i><br />
+          Lorem ipsum?
+        </div>
         <div style="clear: both"></div>
-        <a href="loremipsum3.html" class="tilelinkhtml5">
-          <div class="tile2">
-            <i class="icon-graduation-cap"></i><br />
-            Lorem ipsum
-          </div>
-        </a>
-        <a href="loremipsum4.html" class="tilelinkhtml5">
-          <div class="tile3">
-            <i class="icon-mail"></i><br />
-            Lorem ipsum
-          </div>
-        </a>
+        <div class="tile2" onclick="show('loremipsum3')">
+          <i class="icon-graduation-cap"></i><br />
+          Lorem ipsum
+        </div>
+        <div class="tile3" onclick="show('loremipsum4')">
+          <i class="icon-mail"></i><br />
+          Lorem ipsum
+        </div>
         <div style="clear: both"></div>
         <div class="tile4">
           <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</i>
@@ -74,13 +95,40 @@
 
       <div class="square">
         <div class="tile5">
-          Lorem ipsum <br /><br />
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-          libero ligula, rutrum ac massa elementum, ullamcorper sagittis erat.
-          Mauris nisl purus, molestie eu iaculis sit amet, eleifend pretium
-          odio. Nunc convallis facilisis nisi sed fermentum. Vestibulum ante
-          ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-          curae.
+          <div id="loremipsum1">
+            Lorem ipsum? <br /><br />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Pellentesque libero ligula, rutrum ac massa elementum, ullamcorper
+            sagittis erat. Mauris nisl purus, molestie eu iaculis sit amet,
+            eleifend pretium odio. Nunc convallis facilisis nisi sed fermentum.
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+            posuere cubilia curae.
+          </div>
+          <div id="loremipsum2" class="hide">
+            Lorem ipsum? <br /><br />
+            Curabitur et sagittis nisi. Class aptent taciti sociosqu ad litora
+            torquent per conubia nostra, per inceptos himenaeos. Vestibulum orci
+            magna, vulputate id euismod ut, tristique a orci. Fusce non libero
+            eget enim vestibulum tempus. Aliquam ultrices nibh arcu, a posuere
+            diam sagittis a. Sed pulvinar dui eu leo tincidunt pellentesque.
+          </div>
+          <div id="loremipsum3" class="hide">
+            Lorem ipsum <br /><br />
+            Nullam blandit et massa eu eleifend. Sed sed fringilla justo. Donec
+            ut lobortis lorem. In fringilla lorem eu nulla sagittis, at
+            convallis lacus interdum. Nunc fringilla nunc eu justo rutrum
+            eleifend. Quisque erat nunc, mattis sit amet mattis et, tristique eu
+            purus. Mauris molestie odio non tellus volutpat auctor.
+          </div>
+          <div id="loremipsum4" class="hide">
+            Lorem ipsum <br /><br />
+            Morbi viverra sem et nisl pulvinar tincidunt. Nullam vel velit quis
+            risus vehicula finibus. Suspendisse semper sagittis rhoncus. Nam
+            consectetur nec libero id maximus. Integer egestas ut eros vitae
+            vestibulum. Sed id malesuada justo. Sed tincidunt, nisl at venenatis
+            iaculis, metus ex vulputate nibh, sit amet varius lectus nibh id
+            diam. Mauris non laoreet diam.
+          </div>
         </div>
         <a
           href="https://www.youtube.com/"

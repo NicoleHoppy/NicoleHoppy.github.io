@@ -157,3 +157,7 @@ a.tilelinkhtml5 {
   color: #ffffff;
   text-decoration: none;
 }
+
+.hide {
+  display: none;
+}
